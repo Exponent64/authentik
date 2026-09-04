@@ -1,9 +1,9 @@
 ARG VERSION=2026.5.6
 
-ARG NODE=24
-ARG GO=1.26
+ARG NODE=26
+ARG GO=1.27
 ARG PYTHON=3.14
-ARG UV=0.11
+ARG UV=0.12
 
 # clang version is not officially documented, but 19 what upstream uses on Debian Trixie. 
 # We chose 20 because it is the closest available on Alpine 3.24
@@ -105,7 +105,7 @@ FROM ghcr.io/astral-sh/uv:${UV}-python${PYTHON}-alpine AS uv
 # ======================================= #
 
 # Stage: Base python image
-FROM ghcr.io/polarix-containers/authentik:python-${VERSION} AS python-base
+FROM ghcr.io/exponent64/authentik:python-${VERSION} AS python-base
 
 ENV VENV_PATH="/ak-root/.venv" \
     PATH="/lifecycle:/ak-root/.venv/bin:$PATH" \

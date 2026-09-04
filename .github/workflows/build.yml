@@ -14,7 +14,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: polarix-containers/authentik
+  IMAGE_NAME: exponent64/authentik
 
 jobs:
   build-python:
@@ -23,7 +23,7 @@ jobs:
       contents: read
       packages: write
     timeout-minutes: 15
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
 
     steps:
       - name: Checkout code
@@ -69,7 +69,7 @@ jobs:
       contents: read
       packages: write
     timeout-minutes: 30
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
 
     steps:
       - name: Checkout code
@@ -115,7 +115,7 @@ jobs:
       contents: read
       security-events: write
     timeout-minutes: 10
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     steps:
       - name: Checkout code
         uses: actions/checkout@v7
@@ -147,7 +147,7 @@ jobs:
       contents: read
       security-events: write
     timeout-minutes: 10
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     steps:
       - name: Checkout code
         uses: actions/checkout@v7
